@@ -1,0 +1,15 @@
+
+# Test name, used as log file name.
+TEST_NAME=baseline
+
+# The total records inserted during load.
+# 10_000w
+RECORD_COUNT=10000000
+
+# The total operations executed during workloads.
+# 1000w
+OPERATION_COUNT=10000000
+
+# The total records expected for insert-related workloads.
+# 1000w
+INSERT_COUNT=10000000
