@@ -24,8 +24,9 @@ fi
 # upload go1.19.linux-amd64.tar.gz
 if [[ ! -z ${UPLOAD_BINARY} ]]; then
     upload binary/engula.tar.gz
-    upload go-ycsb/bin/go-ycsb
+    upload binary/go-ycsb/bin/go-ycsb
+    upload binary/go-ycsb/workloads
 fi
 
-upload go-ycsb/workloads
 upload bench
+

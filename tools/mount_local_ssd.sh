@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ue
-
 # This script will mount local ssd files.
 # See https://help.aliyun.com/document_detail/25426.html for details.
 
@@ -12,6 +10,8 @@ sudo apt-get update
 sudo apt-get install -y \
     parted \
     e2fsprogs
+
+set -ue
 
 parted /dev/${DEV} <<EOF
 mklabel gpt
