@@ -8,7 +8,7 @@ set -ue
 
 mkdir -p ~/packages/
 if [ -f ~/packages/${PACKAGE_NAME}.tar.gz ]; then
-    if [ ! -z ${PACKAGE_SHA256_SUM} ]; then
+    if [ ! -z ${PACKAGE_SHA256_SUM:-} ]; then
         ORIGIN_SUM=$(sha256sum ~/packages/${PACKAGE_NAME}.tar.gz | cut -d ' ' -f 1)
         if [[ ${ORIGIN_SUM} == ${PACKAGE_SHA256_SUM} ]]; then
             echo "tarball already exists in ~/packages/${PACKAGE_NAME}"
@@ -26,7 +26,7 @@ if [ -f ~/packages/${PACKAGE_NAME}.tar.gz ]; then
 fi
 
 curl -s -o /tmp/engula.tar.gz.tmp ${PACKAGE_URL} 2>/dev/null
-if [ ! -z ${PACKAGE_SHA256_SUM} ]; then
+if [ ! -z ${PACKAGE_SHA256_SUM:-} ]; then
     ORIGIN_SUM=$(sha256sum /tmp/engula.tar.gz.tmp | cut -d ' ' -f 1)
     if [[ ${ORIGIN_SUM} != ${PACKAGE_SHA256_SUM} ]]; then
         echo "download tarball failed: sha256 is not equals"

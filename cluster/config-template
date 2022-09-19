@@ -6,9 +6,14 @@ DEPLOY_DIR=
 # ${DEPLOY_DIR}/${LOG_DIR}/xxx.log
 LOG_DIR=
 
-# https://xxx/engula.xxx.tar.gz
+# eg: https://xxx/engula-v0.1.1.xxx.tar.gz
+# BASE_URL=https://xxx
+# PACKAGE_NAME=engula-v0.1.1
+BASE_URL=
 PACKAGE_NAME=
-PACKAGE_URL=
+PACKAGE_URL=${BASE_URL}/${PACKAGE_NAME}.tar.gz
+
+# If not set, sha256 will not be checked and the tarball will be re-downloaded every download.
 PACKAGE_SHA256_SUM=
 
 ENABLE_TCMALLOC=true
