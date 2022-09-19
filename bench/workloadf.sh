@@ -8,6 +8,7 @@ echo "run workloadf ..."
 ./go-ycsb run engula -P workloads/workloadf \
     --threads ${THREAD_COUNT} \
     -p engula.proxy="${ENGULA_PROXIES}" \
+    -p engula.conn=32 \
     -p recordcount=${RECORD_COUNT} \
     -p operationcount=${OPERATION_COUNT} \
     -p requestdistribution=zipfian |

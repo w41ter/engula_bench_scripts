@@ -10,6 +10,7 @@ echo "run workloadd ..."
 ./go-ycsb run engula -P workloads/workloadd \
     --threads ${THREAD_COUNT} \
     -p engula.proxy="${ENGULA_PROXIES}" \
+    -p engula.conn=32 \
     -p recordcount=${RECORD_COUNT} \
     -p insertcount=${INSERT_COUNT} \
     -p operationcount=${OPERATION_COUNT} |
