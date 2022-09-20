@@ -52,6 +52,7 @@ election_tick = 3
 max_size_per_msg = 131072
 max_io_batch_size = 131072
 max_inflight_msgs = 10000
+enable_log_recycle = false
 
 [root]
 replicas_per_group = 3
