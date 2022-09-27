@@ -13,6 +13,7 @@ sudo apt-get install -y \
     tmux \
     linux-perf \
     git \
+    gdb \
     sshpass \
     numactl \
     tar \
@@ -23,11 +24,13 @@ sudo apt-get install -y \
 # - iotop
 # - sysstat:            iostat sar psstat
 # - smartmontools:      smartctl
+# - nvme-cli:           nvme smart-log / list
 sudo apt-get install -y \
     htop \
     iotop \
     sysstat \
     smartmontools \
+    nvme-cli \
     tcpdump
 
 # install bpf/bcc
@@ -35,6 +38,7 @@ sudo apt-get install -y \
 	bpfcc-tools \
 	linux-headers-`uname -r`
 
-# install tcmalloc
+# install tcmalloc & cargo
 sudo apt-get install -y \
-    libtcmalloc-minimal4
+    libtcmalloc-minimal4 \
+    cargo
