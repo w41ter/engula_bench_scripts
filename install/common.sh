@@ -42,3 +42,8 @@ sudo apt-get install -y \
 sudo apt-get install -y \
     libtcmalloc-minimal4 \
     cargo
+
+# install prometheus node exporter
+# maybe import grafana dashboard from https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/node-exporter-full.json
+sudo apt-get install -y \
+    prometheus-node-exporter

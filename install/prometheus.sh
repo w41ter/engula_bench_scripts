@@ -28,6 +28,7 @@ sudo cp -r prometheus-${version}.linux-amd64/console_libraries /etc/prometheus
 rm -rf prometheus-${version}.linux-amd64
 
 SERVERS=$(printf ",'%s:${ENGULA_PORT}'" "${HOST_ENGULA_NODES[@]}")
+NODE_SERVERS=$(printf ",'%s:9100'" "${HOST_ENGULA_NODES[@]}")
 cat >/etc/prometheus/prometheus.yml <<EOF
 global:
   scrape_interval: 15s
@@ -44,6 +45,10 @@ scrape_configs:
     enable_http2: true
     static_configs:
       - targets: [${SERVERS:1}]
+
+  - job_name: 'node exporter'
+    static_configs:
+      - targets: [${NODE_SERVERS:1}]
 EOF
 
 cat >/etc/systemd/system/prometheus.service <<"EOF"
