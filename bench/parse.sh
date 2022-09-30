@@ -3,7 +3,7 @@
 source bench/config.sh
 
 # copy from bench/do.sh
-workloads=(a b c d)
+workloads=(a b c d f)
 threads=(40 80 120 160 200 240 280 320 360 400 440 480)
 
 function parse_ycsb_score() {
